@@ -11,6 +11,8 @@ plugins {
     id 'java-library'
 	// Apply the org.sonarqube plugin to add support for Sonar code quality scanning
 	id "org.sonarqube" version "3.0"
+	// Apply Jacoco coverage support
+	id 'jacoco'
 }
 
 repositories {
@@ -24,10 +26,18 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 }
 
+jacocoTestReport {
+    reports {
+        xml.enabled true
+    }
+}
+
 sonarqube {
   properties {
     property "sonar.projectKey", "mannibasi_mastermind"
     property "sonar.organization", "mannibasi"
     property "sonar.host.url", "https://sonarcloud.io"
+    property "sonar.language", "java"
+    property "sonar.junit.reportPaths", "build/test-results/test"
   }
 }
