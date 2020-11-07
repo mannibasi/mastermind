@@ -33,8 +33,11 @@ public class Scorer {
     }
 
     private boolean isInPosition(int i) {
-        if (code.charAt(i) == guess.charAt(i))
-            return codePositionUsed[i] = guessPositionUsed[i] = true;
+        if (code.charAt(i) == guess.charAt(i)) {
+            codePositionUsed[i] = true;
+            guessPositionUsed[i] = true;
+            return true;
+        }
         else
             return false;
     }
@@ -49,10 +52,11 @@ public class Scorer {
 
     private boolean isOutOfPosition(int ic) {
         for (int ig = 0; ig < guess.length(); ig++)
-            if (!codePositionUsed[ic] && !guessPositionUsed[ig] && ig != ic && guess.charAt(ig) == code.charAt(ic))
-                return codePositionUsed[ic] = guessPositionUsed[ig] = true;
-
+            if (!codePositionUsed[ic] && !guessPositionUsed[ig] && ig != ic && guess.charAt(ig) == code.charAt(ic)) {
+                codePositionUsed[ic] = true;
+                guessPositionUsed[ig] = true;
+                return true;
+            }
         return false;
     }
-
 }
