@@ -22,8 +22,10 @@ repositories {
 }
 
 dependencies {
+    // Use Apache commons
+    compile 'org.apache.commons:commons-lang3:3.11'
     // Use JUnit test framework
-    testImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13'
 }
 
 jacocoTestReport {

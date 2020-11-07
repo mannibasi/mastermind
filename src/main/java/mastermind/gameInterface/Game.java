@@ -8,6 +8,7 @@ import mastermind.strategy.RememberingGuessChecker;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import org.apache.commons.lang3.StringUtils;
 
 public class Game {
     private static BufferedReader br;
@@ -22,7 +23,7 @@ public class Game {
     private static class GameConsole implements Console {
         public Score scoreGuess(String guess) {
             System.out.println("Enter score for " + guess);
-            String guessString = readLine();
+            String guessString = StringUtils.trimToEmpty(readLine());
             return new Score(count(guessString, '+'), count(guessString, '-'));
         }
 
