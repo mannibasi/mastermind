@@ -1,4 +1,4 @@
-package mastermind.gamePlay;
+package mastermind.gameplay;
 
 public interface GuessChecker {
     boolean shouldTry(String guess);

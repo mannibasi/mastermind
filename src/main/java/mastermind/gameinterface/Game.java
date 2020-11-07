@@ -1,8 +1,8 @@
-package mastermind.gameInterface;
+package mastermind.gameinterface;
 
-import mastermind.gamePlay.Console;
-import mastermind.gamePlay.GameEngine;
-import mastermind.gamePlay.Score;
+import mastermind.gameplay.Console;
+import mastermind.gameplay.GameEngine;
+import mastermind.gameplay.Score;
 import mastermind.strategy.RememberingGuessChecker;
 
 import java.io.BufferedReader;

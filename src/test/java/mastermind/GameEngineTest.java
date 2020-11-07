@@ -1,9 +1,9 @@
 package mastermind;
 
-import mastermind.gamePlay.Console;
-import mastermind.gamePlay.GameEngine;
-import mastermind.gamePlay.GuessChecker;
-import mastermind.gamePlay.Score;
+import mastermind.gameplay.Console;
+import mastermind.gameplay.GameEngine;
+import mastermind.gameplay.GuessChecker;
+import mastermind.gameplay.Score;
 import org.junit.Before;
 import org.junit.Test;
 

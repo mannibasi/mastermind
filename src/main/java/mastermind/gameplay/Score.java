@@ -1,4 +1,4 @@
-package mastermind.gamePlay;
+package mastermind.gameplay;
 
 import java.util.Objects;
 

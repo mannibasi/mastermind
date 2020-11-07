@@ -1,7 +1,7 @@
 package mastermind;
 
-import mastermind.gamePlay.GameEngine;
-import mastermind.gamePlay.Score;
+import mastermind.gameplay.GameEngine;
+import mastermind.gameplay.Score;
 import mastermind.strategy.RememberingGuessChecker;
 import org.junit.Before;
 import org.junit.Test;

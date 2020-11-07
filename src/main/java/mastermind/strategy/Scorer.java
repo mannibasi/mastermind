@@ -1,7 +1,7 @@
 package mastermind.strategy;
 
-import mastermind.gamePlay.GameEngine;
-import mastermind.gamePlay.Score;
+import mastermind.gameplay.GameEngine;
+import mastermind.gameplay.Score;
 
 public class Scorer {
     private final boolean[] codePositionUsed;

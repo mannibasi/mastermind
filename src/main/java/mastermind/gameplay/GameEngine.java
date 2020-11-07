@@ -1,4 +1,4 @@
-package mastermind.gamePlay;
+package mastermind.gameplay;
 
 public class GameEngine {
     public static final String LETTERS = "ABCDEF";

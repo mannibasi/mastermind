@@ -1,7 +1,7 @@
 package mastermind.strategy;
 
-import mastermind.gamePlay.GuessChecker;
-import mastermind.gamePlay.Score;
+import mastermind.gameplay.GuessChecker;
+import mastermind.gameplay.Score;
 
 import java.util.ArrayList;
 import java.util.List;
