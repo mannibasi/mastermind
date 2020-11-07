@@ -1,5 +1,7 @@
 package mastermind.gamePlay;
 
+import java.util.Objects;
+
 public class Score {
     private final int inPosition;
     private final int inCode;
@@ -11,11 +13,15 @@ public class Score {
 
     @Override
     public boolean equals(Object o) {
-        if (o instanceof Score) {
-            Score score = (Score) o;
-            return score.inPosition == inPosition && score.inCode == inCode;
-        }
-        return false;
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Score score = (Score) o;
+        return inPosition == score.inPosition && inCode == score.inCode;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(inPosition, inCode);
     }
 
     @Override
