@@ -9,6 +9,8 @@
 plugins {
     // Apply the java-library plugin to add support for Java Library
     id 'java-library'
+	// Apply the org.sonarqube plugin to add support for Sonar code quality scanning
+	id "org.sonarqube" version "3.0"
 }
 
 repositories {
@@ -20,4 +22,12 @@ repositories {
 dependencies {
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
+}
+
+sonarqube {
+  properties {
+    property "sonar.projectKey", "mannibasi_mastermind"
+    property "sonar.organization", "mannibasi"
+    property "sonar.host.url", "https://sonarcloud.io"
+  }
 }

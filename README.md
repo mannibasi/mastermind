@@ -1,4 +1,6 @@
 # Mastermind game
+[![CI Actions Status](https://github.com/mannibasi/mastermind/workflows/CI/badge.svg)](https://github.com/mannibasi/mastermind/actions) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=mannibasi_mastermind&metric=alert_status)](https://sonarcloud.io/dashboard?id=mannibasi_mastermind)
+
 Mastermind is a two player board game which has a goal of breaking a code. The first player, the code maker, thinks of a 4 letter word using only the letters A through F. The second player, the code breaker, tries to guess the code maker's code by offering a sequence of guesses. The code maker responds to each guess by offering specific clues. The clues are used by the code breaker to make further guesses until the code is broken. When the code is guessed, the number of tries is displayed to the user.
 
 Example of a round:
