@@ -1,4 +1,4 @@
-package gamePlay;
+package mastermind.gamePlay;
 
 public class GameEngine {
     public static final String LETTERS = "ABCDEF";
@@ -9,7 +9,7 @@ public class GameEngine {
     public static GuessChecker guessChecker;
     public static Console console;
 
-    private Guesser guesser;
+    private final Guesser guesser;
     private boolean gameOver;
     private int tries;
 
@@ -57,7 +57,7 @@ public class GameEngine {
     }
 
     public static class Guesser {
-        private GuessChecker guessChecker;
+        private final GuessChecker guessChecker;
         private int guessIndex = 0;
 
         public Guesser(GuessChecker guessChecker) {

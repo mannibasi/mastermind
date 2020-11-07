@@ -1,7 +1,9 @@
-import gamePlay.Console;
-import gamePlay.GameEngine;
-import gamePlay.GuessChecker;
-import gamePlay.Score;
+package mastermind;
+
+import mastermind.gamePlay.Console;
+import mastermind.gamePlay.GameEngine;
+import mastermind.gamePlay.GuessChecker;
+import mastermind.gamePlay.Score;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -81,9 +83,9 @@ class NoTriesMockConsole extends MockConsole {
 }
 
 class MockConsole implements Console {
+    protected int tries;
     private boolean gameOver;
     private String winningCode;
-    protected int tries;
     private boolean badScoring;
 
     public Score scoreGuess(String guess) {

@@ -1,13 +1,13 @@
-package strategy;
+package mastermind.strategy;
 
-import gamePlay.GameEngine;
-import gamePlay.Score;
+import mastermind.gamePlay.GameEngine;
+import mastermind.gamePlay.Score;
 
 public class Scorer {
-    private boolean[] codePositionUsed;
-    private boolean[] guessPositionUsed;
-    private String code;
-    private String guess;
+    private final boolean[] codePositionUsed;
+    private final boolean[] guessPositionUsed;
+    private final String code;
+    private final String guess;
 
     public Scorer(String code, String guess) {
         this.code = code;

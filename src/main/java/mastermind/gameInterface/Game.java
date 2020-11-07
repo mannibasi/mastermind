@@ -1,9 +1,9 @@
-package gameInterface;
+package mastermind.gameInterface;
 
-import gamePlay.Console;
-import gamePlay.GameEngine;
-import gamePlay.Score;
-import strategy.RememberingGuessChecker;
+import mastermind.gamePlay.Console;
+import mastermind.gamePlay.GameEngine;
+import mastermind.gamePlay.Score;
+import mastermind.strategy.RememberingGuessChecker;
 
 import java.io.BufferedReader;
 import java.io.IOException;

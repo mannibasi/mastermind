@@ -1,21 +1,18 @@
-import gamePlay.Score;
+package mastermind;
+
+import mastermind.strategy.Scorer;
 import org.junit.Test;
-import strategy.Scorer;
 
 import static org.junit.Assert.assertEquals;
 
 public class ScorerTest {
-    private Score score(int inPosition, int inCode) {
-        return new Score(inPosition, inCode);
-    }
-
     @Test
-    public void withNoMatches_scoreIsNull() throws Exception {
+    public void withNoMatches_scoreIsNull() {
         assertInPosition(0, "AAAA", "BBBB");
     }
 
     @Test
-    public void inPosition() throws Exception {
+    public void inPosition() {
         assertInPosition(0, "ABCD", "DCBA");
         assertInPosition(1, "ABBB", "ACCC");
         assertInPosition(2, "AABB", "AACC");
@@ -27,7 +24,7 @@ public class ScorerTest {
     }
 
     @Test
-    public void notInPosition() throws Exception {
+    public void notInPosition() {
         assertNotInPosition(0, "AAAA", "BBBB");
         assertNotInPosition(0, "ABBB", "ACCC");
         assertNotInPosition(1, "ABBB", "CACC");

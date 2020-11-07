@@ -1,22 +1,21 @@
-package strategy;
+package mastermind.strategy;
 
-import gamePlay.GuessChecker;
-import gamePlay.Score;
+import mastermind.gamePlay.GuessChecker;
+import mastermind.gamePlay.Score;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class RememberingGuessChecker implements GuessChecker {
-    private List<ScoreRecord> scoreHistory = new ArrayList<ScoreRecord>();
+    private final List<ScoreRecord> scoreHistory = new ArrayList<>();
 
     public boolean shouldTry(String guess) {
         return isGuessConsistentWithHistory(guess);
     }
 
     private boolean isGuessConsistentWithHistory(String guess) {
-        String assumedCode = guess;
         for (ScoreRecord previous : scoreHistory)
-            if (Scorer.scoreGuess(assumedCode, previous.guess).equals(previous.score) == false)
+            if (!Scorer.scoreGuess(guess, previous.guess).equals(previous.score))
                 return false;
 
         return true;
@@ -26,9 +25,9 @@ public class RememberingGuessChecker implements GuessChecker {
         scoreHistory.add(new ScoreRecord(guess, score));
     }
 
-    private class ScoreRecord {
-        private String guess;
-        private Score score;
+    private static class ScoreRecord {
+        private final String guess;
+        private final Score score;
 
         public ScoreRecord(String guess, Score score) {
             this.guess = guess;

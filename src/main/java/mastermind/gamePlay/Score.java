@@ -1,8 +1,8 @@
-package gamePlay;
+package mastermind.gamePlay;
 
 public class Score {
-    private int inPosition;
-    private int inCode;
+    private final int inPosition;
+    private final int inCode;
 
     public Score(int inPosition, int inCode) {
         this.inPosition = inPosition;

@@ -1,4 +1,4 @@
-package gamePlay;
+package mastermind.gamePlay;
 
 public interface Console {
     Score scoreGuess(String guess);

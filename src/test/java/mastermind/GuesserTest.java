@@ -1,6 +1,8 @@
-import gamePlay.GameEngine;
-import gamePlay.GuessChecker;
-import gamePlay.Score;
+package mastermind;
+
+import mastermind.gamePlay.GameEngine;
+import mastermind.gamePlay.GuessChecker;
+import mastermind.gamePlay.Score;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,7 +14,7 @@ public class GuesserTest {
     private GuessChecker failingChecker;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
 
         failingChecker = new GuessChecker() {
             public boolean shouldTry(String guess) {
@@ -25,20 +27,20 @@ public class GuesserTest {
     }
 
     @Test
-    public void whenNoGuessesAreValid_nextGuessIsNil() throws Exception {
+    public void whenNoGuessesAreValid_nextGuessIsNil() {
         GameEngine.Guesser guesser = new GameEngine.Guesser(failingChecker);
         assertNull(guesser.getNextGuess());
     }
 
     @Test
-    public void WhenOnlyOneGuessIsValid_nextGuessIsThatOne() throws Exception {
+    public void WhenOnlyOneGuessIsValid_nextGuessIsThatOne() {
         GameEngine.Guesser guesser = new GameEngine.Guesser(new SingleChecker("BEEF"));
         assertEquals("BEEF", guesser.getNextGuess());
         assertNull(guesser.getNextGuess());
     }
 
     @Test
-    public void makeGuess() throws Exception {
+    public void makeGuess() {
         assertEquals("AAAA", GameEngine.Guesser.makeGuess(0));
         assertEquals("AAAB", GameEngine.Guesser.makeGuess(1));
         assertEquals("FFFF", GameEngine.Guesser.makeGuess(GameEngine.MAX_CODES - 1));
@@ -50,7 +52,7 @@ public class GuesserTest {
 }
 
 class SingleChecker implements GuessChecker {
-    private String validGuess;
+    private final String validGuess;
 
     public SingleChecker(String validGuess) {
         this.validGuess = validGuess;
